@@ -24,7 +24,34 @@ def load_model(model_name):
         return None
 
 # Upload
-uploaded_file = st.file_uploader("Upload an audio file (.wav)", type=['wav'])
+#uploaded_file = st.file_uploader("Upload an audio file (.wav)", type=['wav'])
+tab_upload, tab_test = st.tabs(["📤 Upload", "🧪 Test Audio"])
+
+audio_file = None
+
+with tab_upload:
+    uploaded_file = st.file_uploader("Upload .wav", type=['wav'])
+    if uploaded_file:
+        audio_file = uploaded_file
+        st.audio(uploaded_file)
+
+with tab_test:
+    test_audios = {
+        'Real': 'models/audio/.pb/wav_de_test/test_audio.wav',      # ← AJUSTEZ
+        'Fake': 'models/audio/.pb/wav_de_test/test_audio.wav',
+    }
+    
+    available = {n: p for n, p in test_audios.items() if os.path.exists(p)}
+    
+    if available:
+        selected = st.selectbox("Choose:", ["-- Select --"] + list(available.keys()))
+        if selected != "-- Select --":
+            with open(available[selected], 'rb') as f:
+                st.audio(f.read())
+            audio_file = open(available[selected], 'rb')
+
+if audio_file is None:
+    st.stop()
 
 if uploaded_file:
     # Player audio

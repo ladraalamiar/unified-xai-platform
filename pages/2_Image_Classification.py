@@ -25,7 +25,41 @@ def load_model(model_key):
         return None
 
 # Upload
-uploaded_file = st.file_uploader("Upload a chest X-ray image", type=['jpg', 'png', 'jpeg'])
+#uploaded_file = st.file_uploader("Upload a chest X-ray image", type=['jpg', 'png', 'jpeg'])
+
+st.subheader("📸 Select Input Image")
+
+tab_upload, tab_test = st.tabs(["📤 Upload", "🧪 Test Images"])
+
+image = None
+
+with tab_upload:
+    uploaded_file = st.file_uploader("Upload X-ray", type=['jpg', 'png', 'jpeg'])
+    if uploaded_file:
+        image = Image.open(uploaded_file).convert('RGB')
+        st.image(image, width=400)
+
+with tab_test:
+    test_images = {
+        'Sample 1': 'models/images/test_lung.jpg',
+        'Sample 2': 'models/images/radio_lung.jpg',
+        'Sample 3': 'models/images/test_radio.jpeg'
+    }
+    
+    available = {n: p for n, p in test_images.items() if os.path.exists(p)}
+    
+    if available:
+        selected = st.selectbox("Choose:", ["-- Select --"] + list(available.keys()))
+        if selected != "-- Select --":
+            image = Image.open(available[selected]).convert('RGB')
+            st.image(image, caption=selected, width=400)
+            st.success(f"✅ {selected}")
+
+if image is None:
+    st.info("Please select an image")
+    st.stop()
+
+# Votre code de classification continue ici...
 
 if uploaded_file:
     # Charger et afficher image
