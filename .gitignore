@@ -1,0 +1,114 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+.venv1/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# Models (fichiers trop lourds pour Git)
+models/**/*.h5
+models/**/*.pb
+models/**/*.pt
+models/**/*.pth
+models/**/*.onnx
+models/**/*.weights
+*.keras
+
+# SAUF: Garder les fichiers de structure
+!models/**/.gitkeep
+!models/**/README.md
+
+# Data (fichiers de test peuvent être gardés s'ils sont petits)
+*.wav
+*.jpg
+*.jpeg
+*.png
+*.dcm
+# SAUF: Exemples de test (si petits)
+!test_data/*.wav
+!test_data/*.jpg
+
+# Logs
+*.log
+logs/
+*.out
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+temp/
+tmp/
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# Pytest
+.pytest_cache/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Environment variables
+.env
+.env.local
+
+# Large files
+*.zip
+*.tar.gz
+*.rar
+
+Lamia/

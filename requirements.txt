@@ -1,0 +1,31 @@
+# Core
+streamlit>=1.24
+numpy
+pillow
+
+# ML & Audio
+torch
+torchvision
+torchaudio
+librosa
+scikit-image
+
+# XAI
+lime
+shap
+
+# Medical Imaging
+torchxrayvision
+
+# Utils
+matplotlib
+opencv-python-headless
+pandas
+
+# Au cas où 
+protobuf>=3.20,<5
+tensorflow-cpu>=2.13
+transformers
+altair
+llvmlite
+pyarrow
