@@ -81,7 +81,7 @@ with col_left:
     """)
     
     if st.button("Go to Image Classification", use_container_width=True, type="primary"):
-        st.switch_page("pages/1_Image_Classification.py")
+        st.switch_page("pages/2_Image_Classification.py")
 
 with col_right:
     st.markdown("### Audio Classification")
@@ -103,7 +103,7 @@ with col_right:
     """)
     
     if st.button("🎵 Go to Audio Classification", use_container_width=True, type="primary"):
-        st.switch_page("pages/2_Audio_Classification.py")
+        st.switch_page("pages/1_Audio_Classification.py")
 
 st.divider()
 
