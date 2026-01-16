@@ -105,7 +105,7 @@ A comprehensive explainable AI platform for medical image analysis (chest X-rays
 ### Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/unified-xai-platform.git
+git clone https://github.com/ladraalamiar/unified-xai-platform.git
 cd unified-xai-platform
 ```
 
